@@ -8,10 +8,6 @@ public class button : MonoBehaviour
     public bool activ;
     public GameObject fond;
     
-    void Start()
-    {
-        
-    }
 
     
     void Update()
