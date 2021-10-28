@@ -3441,7 +3441,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 661896482}
   m_LocalRotation: {x: -0, y: 0.07925008, z: -0, w: 0.9968548}
-  m_LocalPosition: {x: -157.4, y: 7.15, z: -52}
+  m_LocalPosition: {x: -48.2, y: 7.5, z: -192.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3096120938920744260}
@@ -4398,14 +4398,14 @@ MonoBehaviour:
   m_LookAt: {fileID: 661896485}
   m_Follow: {fileID: 661896485}
   m_Lens:
-    FieldOfView: 24
+    FieldOfView: 73
     OrthographicSize: 5
-    NearClipPlane: 0.001
-    FarClipPlane: 4999.62
+    NearClipPlane: 0.28
+    FarClipPlane: 4999.29
     Dutch: 0
     LensShift: {x: 0, y: 0}
   m_Transitions:
-    m_BlendHint: 2
+    m_BlendHint: 3
     m_InheritPosition: 0
     m_OnCameraLive:
       m_PersistentCalls:
@@ -4419,8 +4419,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 809919339}
-  m_LocalRotation: {x: 0.06834137, y: -0.011947591, z: 0.00081848714, w: 0.9975901}
-  m_LocalPosition: {x: -155.68663, y: 11.81, z: -71.6797}
+  m_LocalRotation: {x: 0.03297362, y: 0.08825834, z: -0.002923213, w: 0.9955474}
+  m_LocalPosition: {x: -50.23, y: 11.88, z: -204.71999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1397357895}
@@ -6262,9 +6262,9 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.001
-  far clip plane: 4999.62
-  field of view: 24
+  near clip plane: 0.28
+  far clip plane: 4999.29
+  field of view: 73
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -6289,8 +6289,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1113530371}
-  m_LocalRotation: {x: 0.06834137, y: -0.011947591, z: 0.00081848714, w: 0.9975901}
-  m_LocalPosition: {x: -155.68663, y: 11.81, z: -71.6797}
+  m_LocalRotation: {x: 0.03297362, y: 0.08825834, z: -0.002923213, w: 0.9955474}
+  m_LocalPosition: {x: -50.23, y: 11.88, z: -204.71999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7185,11 +7185,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa7155796051b734daa718462081dc5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 4.6600003, z: -19.754147}
-  m_XDamping: 1
-  m_YDamping: 0.4
-  m_ZDamping: 0.8
+  m_BindingMode: 1
+  m_FollowOffset: {x: -0.010521598, y: 4.38, z: -12.782195}
+  m_XDamping: 2
+  m_YDamping: 2
+  m_ZDamping: 2
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0
