@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
@@ -26,4 +27,15 @@ public class Sentinelle : MonoBehaviour
         index = (index + 1)  % target.Count;
         agent.SetDestination(target[index].position);
     }
+    // private void OnTriggerEnter(Collider other)
+    // {
+    //     if (other.gameObject.CompareTag("Player"))
+    //     {
+    //         GetComponent<Renderer>().material.SetColor(
+    //             "_Color",Color.red
+    //         );
+    //         //gameObject.transform.position = {-50, 7, -210};
+    //         //SceneManager.LoadScene("Lose");
+    //     }
+    // }
 }

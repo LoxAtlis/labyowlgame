@@ -5,24 +5,39 @@ using UnityEngine.Events;
 
 public class button : MonoBehaviour
 {
-    public bool activ;
-    public GameObject fond;
+    private MeshRenderer meshRenderer;
+
+    public Material originalMaterial;
+
+    public Material fond;
     
+    void Start()
+    {
+        meshRenderer = GetComponent<MeshRenderer>();
+        originalMaterial = meshRenderer.material;
+    }
 
     
     void Update()
     {
         
     }
-    void OnMouseOver(){
-        
-        activ = !activ;
-        fond.SetActive(activ);
-        Debug.Log("ouvre toi");
+     void OnMouseOver(){
+        meshRenderer.material = fond;
+        Debug.Log("change");
     }
     void OnMouseExit(){
-        
-        activ = !activ;
-        fond.SetActive(activ);
+        meshRenderer.material = originalMaterial;
     }
+    // void OnMouseOver(){
+        
+    //     activ = !activ;
+    //     fond.SetActive(activ);
+    //     Debug.Log("ouvre toi");
+    // }
+    // void OnMouseExit(){
+        
+    //     activ = !activ;
+    //     fond.SetActive(activ);
+    // }
 }
