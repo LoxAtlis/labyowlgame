@@ -4,11 +4,12 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class PUinvers : MonoBehaviour
 {
+    public List<GameObject> balls = new List<GameObject>();
     public GameObject powerUpBall;
 
     public Transform pUBall;
 
-    public float ballSpeed = 20f;
+    public float ballSpeed ;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,9 +27,17 @@ public class PUinvers : MonoBehaviour
             Debug.Log("Pan");
             GameObject newBall = Instantiate(powerUpBall, pUBall.position,pUBall.rotation);
             Rigidbody ballRigid = newBall.GetComponent<Rigidbody>();
+            balls.Add(newBall);
             ballRigid.velocity = pUBall.forward*ballSpeed;
         }
     }
+    // private void OnTriggerEnter(Collider other)
+    // {
+    //     if (other.gameObject.CompareTag("ennemi"))
+    //     {
+    //         Destroy(balls[i]);
+    //     }
+    // }
     //  void OnShoot(InputValue value)
     // {
     //     if(value.isPressed)

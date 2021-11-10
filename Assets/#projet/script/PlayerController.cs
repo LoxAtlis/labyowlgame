@@ -83,4 +83,12 @@ public class PlayerController : MonoBehaviour
         }
        
     }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("ennemi"))
+        {
+            status = State.normal;
+        }
+       
+    }
 }
