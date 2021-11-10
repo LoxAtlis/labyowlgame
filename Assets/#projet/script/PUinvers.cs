@@ -8,7 +8,7 @@ public class PUinvers : MonoBehaviour
 
     public Transform pUBall;
 
-    public float ballSpeed = 50f;
+    public float ballSpeed = 20f;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,22 +21,25 @@ public class PUinvers : MonoBehaviour
         
     }
    
-    // public void ShootV(InputAction.CallbackContext context){
-    //     if(context.performed){
-    //         Debug.Log("PAN!");
-    //     }
-    // }
-     void OnShoot(InputValue value)
-    {
-        if(value.isPressed)
-        {
-            Shoot();
+    public void ShootV(InputAction.CallbackContext context){
+        if(context.performed){
+            Debug.Log("Pan");
+            GameObject newBall = Instantiate(powerUpBall, pUBall.position,pUBall.rotation);
+            Rigidbody ballRigid = newBall.GetComponent<Rigidbody>();
+            ballRigid.velocity = pUBall.forward*ballSpeed;
         }
     }
-    void Shoot(){
-        GameObject newBall = Instantiate(powerUpBall, pUBall.position,pUBall.rotation);
-        Rigidbody ballRigid = newBall.GetComponent<Rigidbody>();
-        ballRigid.velocity = pUBall.forward*ballSpeed;
+    //  void OnShoot(InputValue value)
+    // {
+    //     if(value.isPressed)
+    //     {
+    //         Shoot();
+    //     }
+    // }
+    // void Shoot(){
+    //     GameObject newBall = Instantiate(powerUpBall, pUBall.position,pUBall.rotation);
+    //     Rigidbody ballRigid = newBall.GetComponent<Rigidbody>();
+    //     ballRigid.velocity = pUBall.forward*ballSpeed;
 
-    }
+    // }
 }
