@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2860915284746203150}
   m_Layer: 0
   m_Name: PowerUp
-  m_TagString: Untagged
+  m_TagString: ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,8 +95,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.9931717
-  m_Center: {x: 0.038684845, y: 0, z: 0}
+  m_Radius: 1.1063715
+  m_Center: {x: 0.15188472, y: 0, z: 0}
 --- !u!114 &2860915284746203149
 MonoBehaviour:
   m_ObjectHideFlags: 0

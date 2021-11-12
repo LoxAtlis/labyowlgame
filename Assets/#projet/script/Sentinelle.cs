@@ -8,25 +8,63 @@ using UnityEngine.AI;
 public class Sentinelle : MonoBehaviour
 {
     public List<Transform> target = new List<Transform>();
+    public List<Transform> targetInvers = new List<Transform>();
     protected int index = -1;
     protected NavMeshAgent agent;
+    public enum State
+    {
+        normal,
+        invers
+    }
+    public State status = State.normal;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         NextDestination();
     }
-
+    
     // Update is called once per frame
     void Update()
     {
         if (agent.remainingDistance <= agent.stoppingDistance) {
-            NextDestination();
-        } 
+            //NextDestination();
+            switch(status){
+                case State.normal: UpdateNormal(); break;
+                case State.invers: UpdateInvers();break;
+                //default: UpdateNormal(); break;
+            }
+        }
+    }
+
+
+    void UpdateNormal(){
+        NextDestination();
     }
     protected virtual void NextDestination() {
         index = (index + 1)  % target.Count;
         agent.SetDestination(target[index].position);
     }
+
+    void UpdateInvers(){
+        NextInversDestination();
+
+    }
+    protected virtual void NextInversDestination() {
+        index = (index + 1)  % targetInvers.Count;
+        agent.SetDestination(targetInvers[index].position);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("ball"))
+        {
+            status = State.invers;
+        }
+             
+    }
+
+
+
     // private void OnTriggerEnter(Collider other)
     // {
     //     if (other.gameObject.CompareTag("Player"))

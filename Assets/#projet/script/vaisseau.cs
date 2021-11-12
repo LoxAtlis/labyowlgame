@@ -25,5 +25,6 @@ public class vaisseau : MonoBehaviour
             //gameObject.transform.position = {-50, 7, -210};
             //SceneManager.LoadScene("Lose");
         }
+        
     }
 }

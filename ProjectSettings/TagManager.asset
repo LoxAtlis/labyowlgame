@@ -6,6 +6,8 @@ TagManager:
   tags:
   - ennemi
   - yeux
+  - ball
+  - item
   layers:
   - Default
   - TransparentFX
