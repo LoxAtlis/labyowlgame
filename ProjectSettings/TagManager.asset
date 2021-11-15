@@ -8,6 +8,7 @@ TagManager:
   - yeux
   - ball
   - item
+  - powerup1
   layers:
   - Default
   - TransparentFX

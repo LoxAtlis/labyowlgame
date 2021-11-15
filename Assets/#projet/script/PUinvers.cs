@@ -24,25 +24,22 @@ public class PUinvers : MonoBehaviour
     public State status = State.normal;
     void Update()
     {
-        switch(status){
-            case State.normal: UpdateNormal(); break;
-            //case State.shoot: ShootV();break;
-        }
     }
-    void UpdateNormal(){
-
-    }
+        
+    
    
-    private void ShootV(InputAction.CallbackContext context){
-        if(context.performed){
-            Debug.Log("Pan");
-            GameObject newBall = Instantiate(powerUpBall, pUBall.position,pUBall.rotation);
-            Rigidbody ballRigid = newBall.GetComponent<Rigidbody>();
-            balls.Add(newBall);
-            ballRigid.velocity = pUBall.forward*ballSpeed;
-            Deleteball();
-            
-        }
+    private void ShootV(InputAction.CallbackContext context ){
+        //if(other.gameObject.CompareTag("item")){
+            if(context.performed ){
+                Debug.Log("Pan");
+                GameObject newBall = Instantiate(powerUpBall, pUBall.position,pUBall.rotation);
+                Rigidbody ballRigid = newBall.GetComponent<Rigidbody>();
+                balls.Add(newBall);
+                ballRigid.velocity = pUBall.forward*ballSpeed;
+                Deleteball();
+                
+            }
+        //}
     }
 
     public void Deleteball(){
@@ -56,19 +53,14 @@ public class PUinvers : MonoBehaviour
     }
     
 
-    private void OnTriggerEnter(Collider other){
-        if( other.gameObject.CompareTag("item")){
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("item"))
+        {
             
-            status = State.shoot;
         }
     }
-    // private void OnTriggerEnter(Collider other)
-    // {
-    //     if (other.gameObject.CompareTag("ennemi"))
-    //     {
-    //         Destroy(balls[i]);
-    //     }
-    // }
     //  void OnShoot(InputValue value)
     // {
     //     if(value.isPressed)

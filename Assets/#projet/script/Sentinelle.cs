@@ -8,7 +8,7 @@ using UnityEngine.AI;
 public class Sentinelle : MonoBehaviour
 {
     public List<Transform> target = new List<Transform>();
-    public List<Transform> targetInvers = new List<Transform>();
+    //public List<Transform> targetInvers = new List<Transform>();
     protected int index = -1;
     protected NavMeshAgent agent;
     public enum State
@@ -20,39 +20,59 @@ public class Sentinelle : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        NextDestination();
-    }
-    
-    // Update is called once per frame
+        NextDestination();       
+    }   
     void Update()
     {
         if (agent.remainingDistance <= agent.stoppingDistance) {
-            //NextDestination();
             switch(status){
                 case State.normal: UpdateNormal(); break;
-                case State.invers: UpdateInvers();break;
+                //case State.invers: UpdateInvers();break;
                 //default: UpdateNormal(); break;
             }
         }
     }
-
 
     void UpdateNormal(){
         NextDestination();
     }
     protected virtual void NextDestination() {
         index = (index + 1)  % target.Count;
+        if(status == State.invers){
+             index = index--;
+        }
+        if(index < 0){
+            index = target.Count - 1;
+        }
+        
+        
+        
         agent.SetDestination(target[index].position);
+    
     }
 
-    void UpdateInvers(){
-        NextInversDestination();
+    // void UpdateInvers(){
+    //     NextInversDestination();
 
-    }
-    protected virtual void NextInversDestination() {
-        index = (index + 1)  % targetInvers.Count;
-        agent.SetDestination(targetInvers[index].position);
-    }
+    // }
+    //  protected virtual void NextInversDestination() {
+    //      index = index--;
+    //      if(index < 0){
+    //         index = target.Count -1;
+    //     }
+    //     agent.SetDestination(target[index].position);
+    //  }
+    //     if(status == State.invers){
+    //     index = index--;
+    //     if(index < 0){
+    //         index = tra
+    //     }
+    //     }
+    //     else{
+    //     index = (index + 1)  % targetInvers.Count;
+    //     }
+    //     agent.SetDestination(targetInvers[index].position);
+    // }
 
     private void OnTriggerEnter(Collider other)
     {

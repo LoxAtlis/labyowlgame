@@ -93,7 +93,7 @@
                     "name": "",
                     "id": "a2c552f6-b8e5-4bbb-853b-90fc8782c9ee",
                     "path": "<Keyboard>/e",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "",
                     "action": "Shoot",
