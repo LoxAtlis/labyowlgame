@@ -12,34 +12,26 @@ public class PUinvers : MonoBehaviour
     public float ballSpeed ;
     public float delay ;
     
-    public enum State{
-        normal,
-        shoot
-    }
+    public bool shoot = false;
     void Start()
     {
-        
-    }
-
-    public State status = State.normal;
+        //() = shoot;
+    }   
     void Update()
     {
-    }
-        
-    
-   
+
+    } 
     private void ShootV(InputAction.CallbackContext context ){
-        //if(other.gameObject.CompareTag("item")){
-            if(context.performed ){
-                Debug.Log("Pan");
-                GameObject newBall = Instantiate(powerUpBall, pUBall.position,pUBall.rotation);
-                Rigidbody ballRigid = newBall.GetComponent<Rigidbody>();
-                balls.Add(newBall);
-                ballRigid.velocity = pUBall.forward*ballSpeed;
-                Deleteball();
-                
+        
+        if(context.performed ){
+            Debug.Log("Pan");
+            GameObject newBall = Instantiate(powerUpBall, pUBall.position,pUBall.rotation);
+            Rigidbody ballRigid = newBall.GetComponent<Rigidbody>();
+            balls.Add(newBall);
+            ballRigid.velocity = pUBall.forward*ballSpeed;
+            Deleteball();                              
             }
-        //}
+        
     }
 
     public void Deleteball(){
@@ -58,7 +50,7 @@ public class PUinvers : MonoBehaviour
     {
         if (other.gameObject.CompareTag("item"))
         {
-            
+            shoot = true;
         }
     }
     //  void OnShoot(InputValue value)

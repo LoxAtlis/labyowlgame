@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public float movementSpeed;
     public CharacterController controller;
     public Transform CameraP;
+    //private Animator animator;
    
     //public float gravityMultiplier;
     public enum State
@@ -25,7 +26,8 @@ public class PlayerController : MonoBehaviour
         
     public void Move(InputAction.CallbackContext context){
         moveVector = context.ReadValue<Vector2>();
-        Debug.Log(moveVector);
+        
+        
     }
     
     void Update()
@@ -45,13 +47,13 @@ public class PlayerController : MonoBehaviour
         cameraPlayer2D = cameraPlayer2D.normalized;
         Vector3 move = Vector3.zero;
         
-        if(moveVector.x != 0){
-            move = transform.right * moveVector.x;
+        if(moveVector.x != 0 || moveVector.y != 0){
+            move = transform.right * moveVector.x + cameraPlayer2D * moveVector.y;
         }
 
-        if(moveVector.y != 0){
-            move = cameraPlayer2D * moveVector.y;
-        }
+        // if(moveVector.y != 0){
+        //     move = cameraPlayer2D * moveVector.y;
+        // }
         move *= movementSpeed;
 
          if(move!= Vector3.zero ){
@@ -67,6 +69,7 @@ public class PlayerController : MonoBehaviour
         //  }
         
         controller.Move (move*Time.deltaTime);
+        
        
     }
     

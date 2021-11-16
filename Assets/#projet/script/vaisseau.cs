@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class vaisseau : MonoBehaviour
 {
+    public Material material1;
+    public Material material2;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,12 +21,12 @@ public class vaisseau : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            GetComponent<Renderer>().material.SetColor(
-                "_Color",Color.red
-            );
-            //gameObject.transform.position = {-50, 7, -210};
-            //SceneManager.LoadScene("Lose");
-        }
-        
+            GetComponent<MeshRenderer> ().material = material2;
+        }       
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        GetComponent<MeshRenderer> ().material = material1;
+               
     }
 }
