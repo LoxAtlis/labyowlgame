@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 public class Key : MonoBehaviour
 {
-    public List<int> cles = new List<int>();
     public GameObject key;
     public GameObject door;
-    public Transform keyOrigin;
+    public GameObject doorbox;
     public Material material1;
     public Material material0;
-    private int cle = 0;
+    public Material open;
+    public Material close;
+    public int cle ;
+    public TextMeshProUGUI tmpText;
     
     void Start()
     {
@@ -22,22 +25,32 @@ public class Key : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter(Collider other){
-        if (other.gameObject.CompareTag("Player"))
+    public void OnTriggerEnter(Collider other){
+        if (other.gameObject.CompareTag("cle") )
         {
             key.GetComponent<MeshRenderer> ().material = material0;
         }
-        
+
+        if (other.gameObject.CompareTag("porte"))
+        {
+            door.GetComponent<MeshRenderer> ().material = open; 
+            Debug.Log("nbr"+cle);    
+            if(cle >= 1){
+                cle -= 1;
+                Destroy(door);
+
+            }    
+        }       
     }
-    private void OnTriggerExit(Collider other){
+    public void OnTriggerExit(Collider other){
         key.GetComponent<MeshRenderer> ().material = material1;
+        door.GetComponent<MeshRenderer> ().material = close;
     }
     public void Open(InputAction.CallbackContext context){
-        Instantiate(key, keyOrigin.position,keyOrigin.rotation);
         Destroy(key);        
-        cle +=1;
+        cle += 1;
+        tmpText.text= ": "+cle.ToString("N0");
+        Debug.Log("nbr clé"+cle);
     }
-
-
 
 }

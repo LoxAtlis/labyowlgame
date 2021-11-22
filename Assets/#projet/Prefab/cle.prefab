@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3036064688231492819}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: -42.229, y: 6.1466465, z: -186.93}
-  m_LocalScale: {x: 0.28582335, y: 0.5509177, z: 0.25275892}
+  m_LocalPosition: {x: -42.222, y: 6.1466465, z: -186.93}
+  m_LocalScale: {x: 0.24652264, y: 0.5509177, z: 0.25275892}
   m_Children:
   - {fileID: 3036064689612549651}
   m_Father: {fileID: 0}
@@ -179,12 +179,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f47aca123d853c843997bf9720f65114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cles: 
   key: {fileID: 3036064688231492819}
   door: {fileID: 0}
-  keyOrigin: {fileID: 3036064688231492823}
+  doorbox: {fileID: 0}
   material1: {fileID: 2100000, guid: f892373e4bd84414497e5ee317615a62, type: 2}
   material0: {fileID: 2100000, guid: f855b401836fbfd49818a5bd558f32a7, type: 2}
+  open: {fileID: 0}
+  close: {fileID: 0}
+  cle: 0
+  tmpText: {fileID: 0}
 --- !u!222 &3036064689612549655
 CanvasRenderer:
   m_ObjectHideFlags: 0

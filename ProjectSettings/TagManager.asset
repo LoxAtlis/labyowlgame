@@ -9,6 +9,8 @@ TagManager:
   - ball
   - item
   - powerup1
+  - cle
+  - porte
   layers:
   - Default
   - TransparentFX
