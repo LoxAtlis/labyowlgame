@@ -20,24 +20,22 @@ public class Key : MonoBehaviour
     public void OnTriggerEnter(Collider other){
         if (other.gameObject.CompareTag("cle") )
         {
-            key.GetComponent<MeshRenderer> ().material = material0;
+            //key.GetComponent<MeshRenderer> ().material = material0;
             //Open().SetActive = true;
-            Destroy(key);   
+            Destroy(key);
                 
             cle += 1;
             tmpText.text= ": "+cle.ToString("N0");
             Debug.Log("nbr clé"+cle);
             
-        }else{
-            
-        }
+        }   
+        
 
         if (other.gameObject.CompareTag("porte"))
         {
             door.GetComponent<MeshRenderer> ().material = open; 
             if(cle >= 1){
-                cle -- ;
-                Debug.Log("nbr"+cle);  
+                cle -- ; 
                 tmpText.text= ": "+cle.ToString("N0");  
                 Destroy(door);
 
