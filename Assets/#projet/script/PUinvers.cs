@@ -24,7 +24,7 @@ public class PUinvers : MonoBehaviour
     private void ShootV(InputAction.CallbackContext context ){
         
         if(context.performed ){
-            Debug.Log("Pan");
+            //Debug.Log("Pan");
             GameObject newBall = Instantiate(powerUpBall, pUBall.position,pUBall.rotation);
             Rigidbody ballRigid = newBall.GetComponent<Rigidbody>();
             balls.Add(newBall);

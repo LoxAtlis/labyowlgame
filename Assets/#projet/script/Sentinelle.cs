@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.AI;
 
+
 [RequireComponent(typeof(NavMeshAgent))]
 public class Sentinelle : MonoBehaviour
 {
@@ -39,14 +40,12 @@ public class Sentinelle : MonoBehaviour
     protected virtual void NextDestination() {
         index = (index + 1)  % target.Count;
         if(status == State.invers){
-             index = index--;
+            
+            index = index--;
         }
         if(index < 0){
             index = target.Count - 1;
-        }
-        
-        
-        
+        }    
         agent.SetDestination(target[index].position);
     
     }

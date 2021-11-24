@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Door : MonoBehaviour
 {
-    public GameObject door;
-    public Material open;
-    public Material close;
-    //GetComponent<Key>();
+    public TextMeshProUGUI tmpText;
+    public GameObject door;  
+    public Material open,close;
     
     void Start()
     {
@@ -19,20 +19,24 @@ public class Door : MonoBehaviour
     {
         
     }
-    // private void OnTriggerEnter(Collider other){
-    //     if (other.gameObject.CompareTag("Player") && cle >=1)
-    //     {
-            
-    //         door.GetComponent<MeshRenderer> ().material = open;
-    //         Destroy(door);
-            
-    //         cle -= 1;
-    //         Debug.Log("nbr"+cle);
-            
-    //     }
-    // }
-    // private void OnTriggerExit(Collider other){
-    //     door.GetComponent<MeshRenderer> ().material = close;
-    // }
+    
+    public void OnTriggerEnter(Collider other){
+        if (other.gameObject.CompareTag("Player"))
+        {
+            door.GetComponent<MeshRenderer> ().material = open; 
+            //int cle = GetComponent<Key>().cle;
+            //Key.cle
+            if(Key.cle >= 1){
+                Key.cle -- ; 
+                tmpText.text= ": "+Key.cle.ToString("N0");  
+                Destroy(door);
+                Debug.Log(Key.cle);
 
+            }    
+        }      
+    }
+    public void OnTriggerExit(Collider other){
+        
+        door.GetComponent<MeshRenderer> ().material = close;
+    }
 }

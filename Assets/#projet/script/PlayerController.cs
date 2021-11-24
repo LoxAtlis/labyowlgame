@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public float movementSpeed;
     public CharacterController controller;
     public Transform CameraP;
-    //private Animator animator;
+    private Animator animator;
    
     //public float gravityMultiplier;
     public enum State
