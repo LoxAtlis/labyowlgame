@@ -12,6 +12,7 @@ public class Sentinelle : MonoBehaviour
     //public List<Transform> targetInvers = new List<Transform>();
     protected int index = -1;
     protected NavMeshAgent agent;
+    public bool stop;
     public enum State
     {
         normal,
