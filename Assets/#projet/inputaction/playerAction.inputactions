@@ -27,7 +27,7 @@
                     "id": "960488eb-8067-4bb5-9499-6dc92f0b3825",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press"
                 }
             ],
             "bindings": [
@@ -111,7 +111,7 @@
                 {
                     "name": "",
                     "id": "d76509af-2351-462d-97b0-fa8072c03440",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/c",
                     "interactions": "Press",
                     "processors": "",
                     "groups": "",

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-public class PUinvers : MonoBehaviour
+public class PUinvers : Item
 {
     public List<GameObject> balls = new List<GameObject>();
     public GameObject powerUpBall;
@@ -23,7 +23,7 @@ public class PUinvers : MonoBehaviour
     } 
     private void ShootV(InputAction.CallbackContext context ){
         
-        if(context.performed ){
+        if(context.performed && shoot ){
             //Debug.Log("Pan");
             GameObject newBall = Instantiate(powerUpBall, pUBall.position,pUBall.rotation);
             Rigidbody ballRigid = newBall.GetComponent<Rigidbody>();

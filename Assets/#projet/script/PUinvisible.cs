@@ -1,30 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class PUinvisible : MonoBehaviour
 {
-    public float time = 10f;
+    public GameObject surv;
+    //public bool desa = true;
     void Start()
     {
         
     }
+    public void desactiver(InputAction.CallbackContext context ){
+        if(context.performed ){
+            Debug.Log("disp");
+            surv.SetActive(false);
+        }
+        else{
+            Update();
 
-    // Update is called once per frame
+        }
+    }
+   public IEnumerator changeActive(){
+       yield return new WaitForSeconds(5f);
+       surv.SetActive(true);
+
+   }
     void Update()
     {
-        StartCoroutine(timer());
-        time += 1;
+        StartCoroutine(changeActive());
     }
-    public  IEnumerator timer(){
-        while(time>0){
-            time--;
-            yield return new WaitForSeconds (1f);
-            GetComponent<Text>().text =string.Format("{0:0}:{1:00}",Mathf.Floor(time/60), time % 60);
-        }
-        if(time == 0){
-            
-        }
-    }
+    
+    
 }

@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public CharacterController controller;
     public Transform CameraP;
     private Animator animator;
+    public bool stop = false;
    
     //public float gravityMultiplier;
     public enum State
@@ -27,6 +28,9 @@ public class PlayerController : MonoBehaviour
     public void Move(InputAction.CallbackContext context){
         moveVector = context.ReadValue<Vector2>();
         
+        
+    }
+    void start(){
         
     }
     
