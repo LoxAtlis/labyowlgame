@@ -6,8 +6,9 @@ public class PUinvers : Item
 {
     public List<GameObject> balls = new List<GameObject>();
     public GameObject powerUpBall;
-
     public Transform pUBall;
+    public GameObject powerUp;
+    
 
     public float ballSpeed ;
     public float delay ;
@@ -52,7 +53,9 @@ public class PUinvers : Item
         {
             shoot = true;
         }
+        
     }
+    
     //  void OnShoot(InputValue value)
     // {
     //     if(value.isPressed)

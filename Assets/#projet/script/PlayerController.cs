@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
     void UpdateBusted(){
         gameObject.transform.position = teleport.transform.position;
          
-            //SceneManager.LoadScene("Lose");
+           
     }
     private void OnTriggerEnter(Collider other)
     {

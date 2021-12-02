@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 6193304297531748321}
   m_Layer: 0
   m_Name: sentinelle
-  m_TagString: Untagged
+  m_TagString: ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -259,6 +259,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  stop: 0
   status: 0
 --- !u!195 &6193304297531748321
 NavMeshAgent:
