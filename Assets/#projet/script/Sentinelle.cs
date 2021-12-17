@@ -10,6 +10,7 @@ public class Sentinelle : MonoBehaviour
     public List<Transform> target = new List<Transform>();
     //public List<Transform> targetInvers = new List<Transform>();
     public int index = -1;
+    public float stop = 1f;
     protected NavMeshAgent agent;
     public Material material2;
     public enum State
@@ -71,9 +72,14 @@ public class Sentinelle : MonoBehaviour
         if (other.gameObject.CompareTag("ball"))
         {
             
-            status = State.invers;
+            agent.isStopped = true;
+            if ( true){
+                agent.isStopped = false;
+                status = State.invers;
+            }
         }
              
     }
+    
 
 }

@@ -4,15 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class Timer : MonoBehaviour
 {
-   
+       
     public float time = 10f;
     void Start()
     {
         StartCoroutine(timer());
         time += 1;
     }
+    void Update()
+    {
+    }
+    
 
     // Update is called once per frame
     public  IEnumerator timer(){
