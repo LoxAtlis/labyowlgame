@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class PUinvers : Item
 {
+    //public AudioSource audioPU;
     public List<GameObject> balls = new List<GameObject>();
     public GameObject powerUpBall;
     public Transform pUBall;
@@ -16,7 +17,7 @@ public class PUinvers : Item
     public bool shoot = false;
     void Start()
     {
-        //() = shoot;
+        //audioPU = GetComponent<AudioSource>();
     }   
     void Update()
     {
@@ -51,6 +52,7 @@ public class PUinvers : Item
     {
         if (other.gameObject.CompareTag("item"))
         {
+            //audioPU.Play();
             shoot = true;
         }
         

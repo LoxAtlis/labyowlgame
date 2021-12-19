@@ -8,9 +8,10 @@ using UnityEngine.AI;
 public class Sentinelle : MonoBehaviour
 {
     public List<Transform> target = new List<Transform>();
-    //public List<Transform> targetInvers = new List<Transform>();
+    public float speed;
+    
     public int index = -1;
-    public float stop = 1f;
+    //public float stop ;
     protected NavMeshAgent agent;
     public Material material2;
     public enum State
@@ -67,19 +68,28 @@ public class Sentinelle : MonoBehaviour
         // }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other )
     {
         if (other.gameObject.CompareTag("ball"))
         {
             
             agent.isStopped = true;
-            if ( true){
-                agent.isStopped = false;
-                status = State.invers;
-            }
+            
+            StartCoroutine(vitesse());
+                //agent.isStopped = false;
+            
+            status = State.invers;
+            
         }
              
     }
-    
+    public IEnumerator vitesse(){
+        
+
+        yield return new WaitForSeconds(6f);
+        agent.isStopped = false ;
+        
+
+   }
 
 }
