@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &54144657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3328,7 +3328,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Illustrations : Loxhay M\xE9lissa\n----------------------------------------\nMod\xE8les
-    3D : Loxhay M\xE9lissa\n----------------------------------------"
+    3D : Loxhay M\xE9lissa\n----------------------------------------\n\nCe projet
+    a \xE9t\xE9 possible grace \xE0 Interface3, au staff interne et aux professeurs
+    externes. \nMerci de faire vivre cette formation.\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3623,7 +3625,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Jeu  r\xE9aliser par Loxhay M\xE9lissa\n\n\n\n\n\n\n\n\n\n----------------------------------------\nmain
+  m_text: "Jeu  r\xE9aliser par Loxhay M\xE9lissa\n\nCeci est un projet de fin de
+    formation, dans l'option \"Unity APP & Game developer\" d' Interface3\n\n\n\n\n----------------------------------------\nmain
     Musique:\n\"Dark Forest Theme\r\"\npar : Cynicmusic\n----------------------------------------\nMusique
     du menu:\n\"The Field Of Dreams\"\npar : Pauliuw/Paulius Jurgelevi\xE8ius\n----------------------------------------\nMusique
     victoire:\n\"Happy end music \"\npar : Igor Gundarev\n----------------------------------------\nMusique
@@ -4072,7 +4075,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1826619233
 MonoBehaviour:
   m_ObjectHideFlags: 0
